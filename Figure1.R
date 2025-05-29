@@ -30,6 +30,14 @@ Heatmap(censat[,c('HiPSC_WT_T2T','HiPSC_Hells_KO_T2T','HiPSC_3B_KO_T2T','HiPSC_3
 dev.off()
 
 
+# Figure 1F
+data <- data.frame(fread("Fig1F_source_data.tsv", header = TRUE, sep = "\t"), stringsAsFactors = FALSE, check.names = FALSE)
+
+pdf('Fig1F_heatmap.pdf', height=14)
+ggplot(data, aes(delta_iPSC, group=segment, color=segment)) + stat_ecdf(geom='step') + theme_classic() + xlim(c(-1,1))
+dev.off()
+
+
 # Figure 1G
 data <- data.frame(fread("Fig1G_source_data.tsv", header = TRUE, sep = "\t"), stringsAsFactors = FALSE, check.names = FALSE)
 
