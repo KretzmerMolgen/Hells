@@ -26,7 +26,7 @@ dev.off()
 data <- data.frame(fread("Fig1E_source_data.tsv", header = TRUE, sep = "\t"), stringsAsFactors = FALSE, check.names = FALSE)
 
 pdf('Fig1E_heatmap.pdf', height=14)
-Heatmap(censat[,c('HiPSC_WT_T2T','HiPSC_Hells_KO_T2T','HiPSC_3B_KO_T2T','HiPSC_3A_3B_DKO_T2T')], show_row_names=F, split=censat$segment)
+Heatmap(data[,c('HiPSC_WT_T2T','HiPSC_Hells_KO_T2T','HiPSC_3B_KO_T2T','HiPSC_3A_3B_DKO_T2T')], show_row_names=F, split=data$segment)
 dev.off()
 
 
