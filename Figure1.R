@@ -16,7 +16,6 @@ dev.off()
 
 # Figure 1C
 data <- data.frame(fread("Fig1C_source_data.tsv", header = TRUE, sep = "\t"), stringsAsFactors = FALSE, check.names = FALSE)
-data <- melt(data[,-c(1:3,)])
 
 pdf('Fig1C_boxplots.pdf', width=21)
 ggplot(data, aes(x=segment, fill=variable, y=value)) + geom_boxplot(outlier.shape=NA) + theme_classic()
